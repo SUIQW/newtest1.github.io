@@ -1,0 +1,88 @@
+/* 基础样式 */
+body {
+  font-family: Arial, sans-serif;
+  /* 移除最大宽度限制，允许内容铺满全屏 */
+  /* max-width: 1000px; */
+  margin: 0; /* 移除自动居中的左右外边距 */
+  padding: 0; /* 移除默认左右内边距 */
+  color: #333;
+  width: 100%; /* 确保body占满宽度 */
+  box-sizing: border-box; /* 避免padding影响宽度计算 */
+}
+
+header {
+  text-align: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+header h1 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+nav {
+  margin: 1rem 0;
+}
+
+nav a {
+  color: #3498db;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+main {
+  min-height: 500px;
+  padding: 2rem 0;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid #eee;
+  color: #777;
+}
+
+/* 搜索页样式 */
+.search-box {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#search-input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.result-item {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.result-item h3 {
+  margin: 0 0 10px 0;
+}
+
+.result-item a {
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.result-item a:hover {
+  color: #3498db;
+}
+
+.date {
+  color: #777;
+  font-size: 0.9rem;
+  margin: 0 0 10px 0;
+}
+
+.excerpt {
+  color: #555;
+  margin: 0;
+}

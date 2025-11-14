@@ -1,0 +1,79 @@
+---
+layout: page  # 用 Jekyll 默认的 page 布局（也可以自己建）
+title: 文章搜索  # 搜索页面标题
+---
+
+<!-- 搜索框样式 + 结果显示区域 -->
+<div style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+  <h2>🔍 输入关键词搜索文章</h2>
+  <!-- 搜索输入框 -->
+  <input 
+    type="text" 
+    id="search-input" 
+    style="width: 100%; padding: 1rem; font-size: 1.1rem; border: 2px solid #ddd; border-radius: 8px; margin-bottom: 1.5rem;"
+    placeholder="比如搜索「Jekyll」「教程」等关键词..."
+  >
+  <!-- 搜索结果列表 -->
+  <div id="search-results" style="list-style: none; padding: 0;"></div>
+</div>
+
+<!-- 引入搜索工具 lunr.js（不用下载，直接用CDN） -->
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
+<script>
+// 第一步：获取所有文章的数据（从后面新建的 search.json 读取）
+fetch('{{ site.baseurl }}/search.json')
+  .then(response => response.json())  // 解析 JSON 数据
+  .then(allPosts => {
+    // 第二步：初始化 lunr 搜索索引（告诉搜索工具要搜索文章的哪些部分）
+    const searchIndex = lunr(function () {
+      this.field('title');  // 搜索文章标题
+      this.field('content');  // 搜索文章正文
+      this.field('date');  // 搜索文章日期（可选）
+      this.ref('url');  // 搜索结果跳转的文章链接
+      
+      // 把所有文章数据添加到搜索索引里
+      allPosts.forEach(post => {
+        this.add(post);
+      });
+    });
+
+    // 第三步：绑定搜索输入事件（用户输入时实时搜索）
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+
+    searchInput.addEventListener('input', function (e) {
+      const searchKeyword = e.target.value.trim();  // 获取用户输入的关键词（去掉空格）
+      searchResults.innerHTML = '';  // 清空之前的搜索结果
+
+      // 如果用户没输入关键词，不执行搜索
+      if (!searchKeyword) {
+        searchResults.innerHTML = '<p style="color: #666;">请输入关键词搜索...</p>';
+        return;
+      }
+
+      // 执行搜索（lunr 会返回匹配的文章）
+      const matchedPosts = searchIndex.search(searchKeyword);
+
+      // 如果没找到匹配的文章
+      if (matchedPosts.length === 0) {
+        searchResults.innerHTML = '<p style="color: #999;">没有找到相关文章，请换个关键词试试～</p>';
+        return;
+      }
+
+      // 显示匹配的文章结果
+      matchedPosts.forEach(match => {
+        // 找到匹配文章的完整数据
+        const post = allPosts.find(item => item.url === match.ref);
+        // 创建结果项
+        const resultItem = document.createElement('div');
+        resultItem.style = 'padding: 1.2rem; border-bottom: 1px solid #eee;';
+        resultItem.innerHTML = `
+          <a href="${post.url}" style="text-decoration: none; color: #2c3e50; font-size: 1.2rem; font-weight: bold;">${post.title}</a>
+          <p style="color: #666; margin: 0.5rem 0; font-size: 0.9rem;">发布日期：${post.date}</p>
+          <p style="color: #34495e; margin: 0;">${post.content.substring(0, 100)}...  <!-- 显示正文前100字 -->
+        `;
+        searchResults.appendChild(resultItem);
+      });
+    });
+  });
+</script>
