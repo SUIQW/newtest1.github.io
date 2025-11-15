@@ -1,0 +1,185 @@
+---
+title: 科研成果
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../assets/images/OIP.jpg" type="image/x-icon">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link rel="stylesheet" href="../assets/main.css">
+  <link rel="stylesheet" href="../assets/style.css">
+
+
+
+   <style>
+/* 页首标题背景样式 */
+.team-header-banner {
+  position: relative;
+  /* 背景图设置 - 替换为你的图片路径 */
+  background-image: url("/assets/images/lab-photo.jpg");
+  background-size: cover; /* 覆盖整个区域 */
+  background-position: center; /* 居中显示 */
+  height: 33vh; /* 占屏幕高度的三分之一 */
+  min-height: 200px; /* 最小高度，避免过小屏幕下显示不全 */
+  overflow: hidden;
+}
+
+/* 标题容器（用于居左和添加半透明遮罩） */
+.header-content {
+  position: absolute;
+  left: 5%; /* 左侧距离 */
+  top: 50%; /* 垂直居中 */
+  transform: translateY(-50%); /* 精确垂直居中 */
+  padding: 1.5rem 2rem;
+  /* 半透明背景增强文字可读性 */
+  
+  border-radius: 6px;
+}
+
+/* 标题样式 */
+.header-content h1 {
+  color: white;
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* 文字阴影增强立体感 */
+}
+
+/* 原有实验室介绍样式（保持之前的调整） */
+.lab-intro {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.intro-text {
+  flex: 7;
+}
+
+.intro-image {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-image img {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  /* 小屏幕标题调整 */
+  .header-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  /* 原有响应式样式保持 */
+  .lab-intro {
+    flex-direction: column;
+  }
+  .intro-text, .intro-image {
+    flex: none;
+    width: 100%;
+  }
+  .intro-image img {
+    max-height: 350px;
+  }
+}
+</style>
+</head>
+<body>
+  <!-- 顶部导航栏 -->
+ <header class="top-header" style="background: #333; color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;">
+    <!-- 左侧标题 -->
+    <div class="logo" style="font-size: 1.5rem; font-weight: bold; color: #ffd700;">
+        VisSpectral
+    </div>
+    
+    <!-- 右侧导航 -->
+    <nav class="main-nav">
+      <ul style="display: flex; list-style: none; gap: 2rem;">
+        <li><a href="/" style="color: #ffd700; text-decoration: none;">首页</a></li>
+        <li><a href="../news.html/" style="color: white; text-decoration: none;">新闻动态</a></li>
+        <li><a href="../team.html/" style="color: white; text-decoration: none;">研究团队</a></li>
+        <li><a href="../result.html/" style="color: white; text-decoration: none;">科研成果</a></li>
+        <li><a href="../search.html" style="color: white; text-decoration: none;">搜索</a></li>
+        <li><a href="../about.html/" style="color: white; text-decoration: none;">关于我们</a></li>
+      </ul>
+    </nav>
+  </header>
+ 
+<header class="team-header-banner">
+  <div class="header-content">
+    <h1>科研成果</h1>
+  </div>
+</header>
+
+<!-- 科创成果列表容器 -->
+<div class="achievement-container" style="max-width: 1600px !important; width: 96% !important; margin: 2rem auto; padding: 0; box-sizing: border-box;">
+  <!-- 按时间倒序排列所有科创成果（最新的在前） -->
+  {% for post in site.categories.result reversed %}
+  <article class="achievement-item" style="display: flex; margin-bottom: 3rem; gap: 2%; flex-wrap: nowrap; border-bottom: 1px solid #eee; padding-bottom: 2rem;">
+    <!-- 成果图片（占屏幕左侧5%-45%，与新闻列表样式一致） -->
+    <div class="achievement-image" style="
+      width: 35vw; 
+      min-width: 5vw; 
+      max-width: 45vw; 
+      height: 240px; 
+      overflow: hidden; 
+      border-radius: 8px;
+      box-sizing: border-box;
+    ">
+      <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+    </div>
+
+    <!-- 成果内容 -->
+    <div class="achievement-content" style="
+      flex: 1; 
+      min-width: 300px; 
+      box-sizing: border-box; 
+      padding: 0 1vw;
+    ">
+      <!-- 发布时间（与新闻样式一致） -->
+      <time class="achievement-date" style="display: inline-block; color: #fff; font-size: 0.9rem; margin-bottom: 0.5rem; 
+        padding: 0.3rem 0.8rem; background: rgba(0,0,0,0.6); border-radius: 4px;">
+        {{ post.date | date: "%Y-%m-%d" }}
+      </time>
+      
+      <!-- 成果标题 -->
+      <h2 class="achievement-title" style="margin: 0 0 1rem 0;">
+        <a href="{{ post.url | relative_url }}" style="text-decoration: none; color: #2c3e50; transition: color 0.3s ease;">
+          {{ post.title }}
+        </a>
+      </h2>
+      
+      <!-- 成果简介 -->
+      <div class="achievement-excerpt" style="color: #34495e; line-height: 1.6;">
+        {{ post.excerpt | strip_html | truncate: 250 }} <!-- 简介长度可调整 -->
+      </div>
+      
+      <!-- 查看详情链接 -->
+      <a href="{{ post.url | relative_url }}" style="display: inline-block; margin-top: 1rem; color: #27ae60; text-decoration: none; font-weight: 500;">
+        查看详情 →
+      </a>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+
+
+
+  <!-- 网站尾部（铺满页面） -->
+  <footer style="background: #f5f5f5; padding: 2rem; text-align: center; width: 100%; margin-top: 3rem;">
+    <p style="font-size: 1rem; color: #333;">© {{ site.time | date: "%Y" }} {{ site.title }} - 用 Jekyll 搭建</p>
+  </footer>
+
+
+
+  
+</body>
+</html>

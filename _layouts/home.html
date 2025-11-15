@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }} - {{ site.title }}</title>
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
+  <link rel="stylesheet" href="../assets/main.css">
+  <link rel="stylesheet" href="../assets/style.css">
   <style>
     body {
       max-width: none; /* 取消最大宽度限制 */
@@ -53,178 +53,249 @@
       object-fit: cover;
     }
   </style>
+
+    
+  <style>
+    /* 新增父容器样式 */
+    .grid-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        margin: 0 100px;
+    }
+
+    .mycontainer {
+        position: relative;
+        /* 基础宽度（大屏幕每行4个） */
+        flex-basis: calc(25% - 20px);
+        padding-top: 25%; /* 保持1:1比例 */
+    }
+
+    /* 中等屏幕适配（每行3个） */
+    @media (max-width: 1200px) {
+        .mycontainer {
+            flex-basis: calc(33.33% - 20px);
+            padding-top: 33.33%;
+        }
+    }
+
+    /* 小屏幕适配（每行2个） */
+    @media (max-width: 800px) {
+        .mycontainer {
+            flex-basis: calc(50% - 20px);
+            padding-top: 50%;
+        }
+    }
+
+    /* 超小屏幕适配（单行显示） */
+    @media (max-width: 500px) {
+        .mycontainer {
+            flex-basis: 100%;
+            padding-top: 100%;
+        }
+    }
+
+    /* 原有的容器样式保持不变 */
+    .myimage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        clip-path: circle(45%);
+        transition: opacity 0.5s ease;
+    }
+
+    .mycontainer:hover .myimage {
+        opacity: 0;
+    }
+
+    .myoverlay {
+        position: absolute;
+        bottom: 50%;
+        left: 0;
+        right: 100%;
+        background-color: #92e7c8;
+        overflow: hidden;
+        width: 0;
+        height: 50%;
+        transition: .5s ease;
+        clip-path: circle(60% at bottom);
+    }
+
+    .mycontainer:hover .myoverlay {
+        width: 100%;
+        left: 0;
+    }
+
+    .mytext {
+        white-space: nowrap; 
+        color: #000;
+        font-size: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .mytextbig {
+        color: #fff;
+        font-size: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .myoverlayy {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 100%;
+        background-color: #92e7c8;
+        overflow: hidden;
+        width: 0;
+        height: 50%;
+        transition: .5s ease;
+        border-top: 2px solid #000;
+        clip-path: circle(60% at top);
+    }
+
+    .mycontainer:hover .myoverlayy {
+        width: 100%;
+        left: 0;
+    }
+    .titlebow
+      {
+        text-align:center;
+      }
+      
+  </style>
+
+  <style>
+    /* 重置默认样式，避免浏览器差异 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Banner核心样式 */
+    .page-banner {
+      width: 100%;
+      min-height: 500px; /* 最小高度，保证手机端也有足够显示区域 */
+      height: 500px; /* 占满整个视口高度（可选，想固定高度可改为500px） */
+      position: relative; /* 作为子元素绝对定位的容器 */
+      overflow: hidden; /* 隐藏超出部分，避免图片拉伸变形 */
+    }
+
+    /* 背景图片容器 */
+    .page-banner-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* 背景图片（实际显示的背景） */
+    .page-banner-img > div {
+      width: 100%;
+      height: 100%;
+      background-size: cover; /* 铺满容器，保持比例 */
+      background-position: center; /* 图片居中 */
+      background-repeat: no-repeat;
+    }
+
+    /* 占位图片（仅作降级兼容，正常情况下隐藏） */
+    .img-placeholder {
+      display: none;
+    }
+
+    /* 内容容器（控制标题最大宽度，避免文字贴边） */
+    .wrapper {
+      width: 100%;
+      max-width: 1200px; /* 电脑端文字区域最大宽度 */
+      margin: 0 auto;
+      height: 100%;
+      position: relative; /* 让标题区域相对这个容器居中 */
+    }
+
+    /* 标题垂直水平居中核心 */
+    .page-banner-inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* 精准居中 */
+      text-align: center; /* 文字水平居中 */
+      width: 100%;
+      padding: 0 20px; /* 手机端左右留白 */
+    }
+
+    /* 主标题样式 */
+    .page-banner-heading {
+      font-size: 48px; /* 电脑端字体大小 */
+      color: #ffffff; /* 白色文字 */
+      margin-bottom: 16px; /* 与副标题间距 */
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 文字阴影，增强可读性 */
+      font-weight: 700; /* 加粗 */
+    }
+
+    /* 副标题样式 */
+    .page-banner-subheading {
+      font-size: 24px; /* 电脑端字体大小 */
+      color: #f5f5f5; /* 浅灰色文字，与主标题区分 */
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+      font-weight: 400; /* 正常粗细 */
+    }
+
+    /* 响应式适配：手机端（屏幕宽度≤768px） */
+    @media (max-width: 768px) {
+      .page-banner {
+        min-height: 400px; /* 手机端缩小Banner高度 */
+      }
+      .page-banner-heading {
+        font-size: 32px; /* 缩小主标题字体 */
+      }
+      .page-banner-subheading {
+        font-size: 18px; /* 缩小副标题字体 */
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- 顶部导航栏 -->
-  <header class="top-header" style="background: #333; color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;">
-    <div class="language-switch">
-      <a href="#" style="color: #ffd700; margin-right: 1rem;">中文</a>
-      <a href="#" style="color: white; margin-right: 1rem;">English</a>
+ <header class="top-header" style="background: #333; color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;">
+    <!-- 左侧标题 -->
+    <div class="logo" style="font-size: 1.5rem; font-weight: bold; color: #ffd700;">
+        VisSpectral
     </div>
+    
+    <!-- 右侧导航 -->
     <nav class="main-nav">
       <ul style="display: flex; list-style: none; gap: 2rem;">
-        <li><a href="{{ site.baseurl }}/" style="color: #ffd700; text-decoration: none;">首页</a></li>
-        <li><a href="{{ site.baseurl }}/about/" style="color: white; text-decoration: none;">关于我们</a></li>
-        <li><a href="{{ site.baseurl }}/research/" style="color: white; text-decoration: none;">研究方向</a></li>
-        <li><a href="{{ site.baseurl }}/publications/" style="color: white; text-decoration: none;">论文发表</a></li>
-        <li><a href="{{ site.baseurl }}/team/" style="color: white; text-decoration: none;">研究团队</a></li>
-        <li><a href="{{ site.baseurl }}/contact/" style="color: white; text-decoration: none;">联系方式</a></li>
-        <li><a href="{{ site.baseurl }}/search.html" style="color: white; text-decoration: none;">搜索</a></li>
+        <li><a href="/" style="color: #ffd700; text-decoration: none;">首页</a></li>
+        <li><a href="../news.html/" style="color: white; text-decoration: none;">新闻动态</a></li>
+        <li><a href="../team.html/" style="color: white; text-decoration: none;">研究团队</a></li>
+        <li><a href="../result.html/" style="color: white; text-decoration: none;">科研成果</a></li>
+        <li><a href="../search.html" style="color: white; text-decoration: none;">搜索</a></li>
+        <li><a href="../about.html/" style="color: white; text-decoration: none;">关于我们</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- 网站标题区域 -->
-  <div style="background: #2c3e50; color: white; padding: 3rem 2rem; text-align: center; width: 100%;">
-    <h1 style="margin: 0; font-size: 3rem;">{{ site.title }}</h1>
-    <p style="margin-top: 0.5rem; font-size: 1.2rem;">{{ site.description }}</p>
-  </div>
 
-  <!-- 自动切换照片展示框（铺满全屏） -->
-  <div class="carousel" style="position: relative; height: 500px; overflow: hidden;">
-    <div class="carousel-slides">
-      <!-- 轮播图1 -->
-      <div class="slide active" style="background-image: url('{{ site.baseurl }}/assets/images/slide1.jpg'); 
-                                      width: 100%; 
-                                      height: 100%; 
-                                      background-size: cover; 
-                                      background-position: center; 
-                                      position: absolute; 
-                                      top: 0; 
-                                      left: 0; 
-                                      opacity: 1; 
-                                      transition: opacity 1s ease;">
-        <div class="slide-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center;">
-          <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">光谱目标跟踪研究</h2>
-          <p style="font-size: 1.2rem;">领先的计算机视觉研究方向</p>
-        </div>
-      </div>
-      <!-- 轮播图2 -->
-      <div class="slide" style="background-image: url('{{ site.baseurl }}/assets/images/slide2.jpg'); 
-                                width: 100%; 
-                                height: 100%; 
-                                background-size: cover; 
-                                background-position: center; 
-                                position: absolute; 
-                                top: 0; 
-                                left: 0; 
-                                opacity: 0; 
-                                transition: opacity 1s ease;">
-        <div class="slide-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center;">
-          <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">先进算法开发</h2>
-          <p style="font-size: 1.2rem;">不断创新的算法研究</p>
-        </div>
-      </div>
-      <!-- 轮播图3 -->
-      <div class="slide" style="background-image: url('{{ site.baseurl }}/assets/images/slide3.jpg'); 
-                                width: 100%; 
-                                height: 100%; 
-                                background-size: cover; 
-                                background-position: center; 
-                                position: absolute; 
-                                top: 0; 
-                                left: 0; 
-                                opacity: 0; 
-                                transition: opacity 1s ease;">
-        <div class="slide-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center;">
-          <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">实验平台建设</h2>
-          <p style="font-size: 1.2rem;">完善的光谱成像实验环境</p>
-        </div>
-      </div>
-    </div>
-    <!-- 轮播控制按钮 -->
-    <button class="carousel-prev" style="position: absolute; top: 50%; left: 2rem; transform: translateY(-50%); background: rgba(0,0,0,0.3); color: white; border: none; width: 40px; height: 40px; font-size: 1.5rem; cursor: pointer;">←</button>
-    <button class="carousel-next" style="position: absolute; top: 50%; right: 2rem; transform: translateY(-50%); background: rgba(0,0,0,0.3); color: white; border: none; width: 40px; height: 40px; font-size: 1.5rem; cursor: pointer;">→</button>
-    <!-- 轮播指示器 -->
-    <div class="carousel-dots" style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); display: flex; gap: 0.5rem;">
-      <span class="dot active" data-index="0" style="width: 12px; height: 12px; border-radius: 50%; background: white; cursor: pointer;"></span>
-      <span class="dot" data-index="1" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer;"></span>
-      <span class="dot" data-index="2" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer;"></span>
-    </div>
-  </div>
 
-  <!-- 主页正文（铺满页面） -->
-  <main>
-    {{ content }}
-
-    <!-- 实验室介绍部分（左侧文字+右侧图片） -->
-    <section class="lab-intro">
-      <div class="intro-text">
-        <h2 style="margin-bottom: 1.5rem; color: #2c3e50; font-size: 2rem;">实验室介绍</h2>
-        <p style="margin-bottom: 1rem; line-height: 1.8; font-size: 1.1rem;">我们的实验室专注于光谱目标跟踪领域的研究，致力于开发先进的计算机视觉算法和系统。通过结合光谱成像技术与目标跟踪算法，我们在复杂场景下的目标识别与追踪方面取得了显著成果。</p>
-        <p style="margin-bottom: 1rem; line-height: 1.8; font-size: 1.1rem;">实验室拥有一流的研究团队和先进的实验设备，与国内外多所高校和研究机构保持着密切的合作关系。我们的研究成果已在多个顶级学术期刊和会议上发表，并应用于多个实际领域。</p>
-        <p style="line-height: 1.8; font-size: 1.1rem;">欢迎对光谱成像和目标跟踪领域感兴趣的学者和学生加入我们的团队，共同推动该领域的发展与创新。</p>
-      </div>
-      <div class="intro-image">
-        <img src="{{ site.baseurl }}/assets/images/lab-photo.jpg" alt="实验室照片" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-      </div>
-    </section>
-  </main>
 
   <!-- 网站尾部（铺满页面） -->
   <footer style="background: #f5f5f5; padding: 2rem; text-align: center; width: 100%; margin-top: 3rem;">
     <p style="font-size: 1rem; color: #333;">© {{ site.time | date: "%Y" }} {{ site.title }} - 用 Jekyll 搭建</p>
   </footer>
 
-  <!-- 轮播图脚本（保持不变） -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const slides = document.querySelectorAll('.slide');
-      const dots = document.querySelectorAll('.dot');
-      const prevBtn = document.querySelector('.carousel-prev');
-      const nextBtn = document.querySelector('.carousel-next');
-      let currentSlide = 0;
-      let slideInterval;
 
-      function startSlideInterval() {
-        slideInterval = setInterval(nextSlide, 5000);
-      }
 
-      function showSlide(index) {
-        slides.forEach(slide => {
-          slide.style.opacity = '0';
-          slide.classList.remove('active');
-        });
-        dots.forEach(dot => dot.classList.remove('active'));
-        
-        slides[index].style.opacity = '1';
-        slides[index].classList.add('active');
-        dots[index].classList.add('active');
-        currentSlide = index;
-      }
-
-      function nextSlide() {
-        let newIndex = (currentSlide + 1) % slides.length;
-        showSlide(newIndex);
-      }
-
-      function prevSlide() {
-        let newIndex = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(newIndex);
-      }
-
-      prevBtn.addEventListener('click', () => {
-        clearInterval(slideInterval);
-        prevSlide();
-        startSlideInterval();
-      });
-
-      nextBtn.addEventListener('click', () => {
-        clearInterval(slideInterval);
-        nextSlide();
-        startSlideInterval();
-      });
-
-      dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-          clearInterval(slideInterval);
-          showSlide(parseInt(dot.dataset.index));
-          startSlideInterval();
-        });
-      });
-
-      startSlideInterval();
-    });
-  </script>
+  
 </body>
 </html>

@@ -1,0 +1,559 @@
+---
+title: 研究团队
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../assets/images/OIP.jpg" type="image/x-icon">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link rel="stylesheet" href="../assets/main.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    body {
+      max-width: none; /* 取消最大宽度限制 */
+      padding: 0;      /* 取消默认内边距 */
+    }
+    /* 全局样式：清除默认边距，确保内容铺满 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      width: 100%;
+      overflow-x: hidden; /* 防止横向滚动 */
+    }
+    /* 导航栏铺满 */
+    .top-header {
+      width: 100%;
+    }
+    /* 轮播图铺满 */
+    .carousel {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    /* 内容区铺满，取消最大宽度限制 */
+    main {
+      width: 100%;
+      padding: 0 1rem; /* 保留少量内边距避免内容贴边 */
+      margin: 2rem 0; /* 仅上下边距，取消左右边距 */
+    }
+    /* 实验室介绍区域自适应 */
+    .lab-intro {
+      display: flex;
+      width: 100%;
+      gap: 2rem;
+      padding: 0 2rem; /* 左右内边距控制内容与边缘距离 */
+    }
+    .intro-text, .intro-image {
+      flex: 1; /* 两列平均分配宽度 */
+    }
+    .intro-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  </style>
+    <!--团队人员-->
+    <style>
+/* 标题样式 */
+.team-header {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.team-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  position: relative;
+  display: inline-block;
+}
+
+.team-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 10%;
+  width: 80%;
+  height: 3px;
+  background-color: #6a4c93;
+}
+
+/* 网格布局 */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto 5rem;
+}
+
+/* 卡片样式 */
+.team-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* 照片区域 */
+.member-photo {
+  background-color: #f5f5f7;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.photo-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 信息区域 */
+.member-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.member-name {
+  font-size: 1.4rem;
+  color: #2d2d2d;
+  margin: 0 0 0.8rem;
+}
+
+.member-research {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0 0 1.2rem;
+  line-height: 1.6;
+}
+
+/* 简历区域 */
+.member-resume {
+  margin-top: 1rem;
+}
+
+.resume-toggle {
+  background-color: #6a4c93;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.resume-toggle:hover {
+  background-color: #523a76;
+}
+
+.resume-detail {
+  margin-top: 1rem;
+  padding: 1.2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  display: none;
+  text-align: left;
+  line-height: 1.7;
+  color: #444;
+  font-size: 0.9rem;
+  animation: fadeIn 0.4s ease;
+}
+
+/* 显示简历的样式 */
+.resume-detail.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  
+  .photo-img {
+    width: 150px;
+    height: 150px;
+  }
+}
+    </style>
+
+<style>
+/* 调整整体布局比例 */
+.lab-intro {
+  display: flex;
+  gap: 2rem; /* 文字与图片间距 */
+  padding: 2rem 5%; /* 左右留白 */
+  max-width: 1400px; /* 限制最大宽度，避免太宽 */
+  margin: 0 auto; /* 居中显示 */
+}
+
+/* 左侧文字区域占比扩大 */
+.intro-text {
+  flex: 7; /* 文字占7份 */
+}
+
+/* 右侧图片区域占比缩小 */
+.intro-image {
+  flex: 3; /* 图片占3份 */
+  display: flex;
+  align-items: center; /* 图片垂直居中 */
+  justify-content: center; /* 图片水平居中 */
+}
+
+/* 限制图片最大尺寸，使其变小 */
+.intro-image img {
+  max-width: 100%; /* 不超过容器宽度 */
+  max-height: 500px; /* 限制最大高度，控制图片大小 */
+  object-fit: cover; /* 保持图片比例 */
+}
+
+/* 响应式调整（小屏幕自动堆叠） */
+@media (max-width: 768px) {
+  .lab-intro {
+    flex-direction: column; /* 垂直排列 */
+  }
+  .intro-text, .intro-image {
+    flex: none; /* 取消比例，占满宽度 */
+    width: 100%;
+  }
+  .intro-image img {
+    max-height: 350px; /* 小屏幕图片进一步缩小 */
+  }
+}
+</style>
+
+
+  <style>
+    /* 重置默认样式，避免浏览器差异 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Banner核心样式 */
+    .page-banner {
+      width: 100%;
+      min-height: 500px; /* 最小高度，保证手机端也有足够显示区域 */
+      height: 500px; /* 占满整个视口高度（可选，想固定高度可改为500px） */
+      position: relative; /* 作为子元素绝对定位的容器 */
+      overflow: hidden; /* 隐藏超出部分，避免图片拉伸变形 */
+    }
+
+    /* 背景图片容器 */
+    .page-banner-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* 背景图片（实际显示的背景） */
+    .page-banner-img > div {
+      width: 100%;
+      height: 100%;
+      background-size: cover; /* 铺满容器，保持比例 */
+      background-position: center; /* 图片居中 */
+      background-repeat: no-repeat;
+    }
+
+    /* 占位图片（仅作降级兼容，正常情况下隐藏） */
+    .img-placeholder {
+      display: none;
+    }
+
+    /* 内容容器（控制标题最大宽度，避免文字贴边） */
+    .wrapper {
+      width: 100%;
+      max-width: 1200px; /* 电脑端文字区域最大宽度 */
+      margin: 0 auto;
+      height: 100%;
+      position: relative; /* 让标题区域相对这个容器居中 */
+    }
+
+    /* 标题垂直水平居中核心 */
+    .page-banner-inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* 精准居中 */
+      text-align: center; /* 文字水平居中 */
+      width: 100%;
+      padding: 0 20px; /* 手机端左右留白 */
+    }
+
+    /* 主标题样式 */
+    .page-banner-heading {
+      font-size: 48px; /* 电脑端字体大小 */
+      color: #ffffff; /* 白色文字 */
+      margin-bottom: 16px; /* 与副标题间距 */
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 文字阴影，增强可读性 */
+      font-weight: 700; /* 加粗 */
+    }
+
+    /* 副标题样式 */
+    .page-banner-subheading {
+      font-size: 24px; /* 电脑端字体大小 */
+      color: #f5f5f5; /* 浅灰色文字，与主标题区分 */
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+      font-weight: 400; /* 正常粗细 */
+    }
+
+    /* 响应式适配：手机端（屏幕宽度≤768px） */
+    @media (max-width: 768px) {
+      .page-banner {
+        min-height: 400px; /* 手机端缩小Banner高度 */
+      }
+      .page-banner-heading {
+        font-size: 32px; /* 缩小主标题字体 */
+      }
+      .page-banner-subheading {
+        font-size: 18px; /* 缩小副标题字体 */
+      }
+    }
+  </style>
+
+  <style>
+/* 页首标题背景样式 */
+.team-header-banner {
+  position: relative;
+  /* 背景图设置 - 替换为你的图片路径 */
+  background-image: url("/assets/images/lab-photo.jpg");
+  background-size: cover; /* 覆盖整个区域 */
+  background-position: center; /* 居中显示 */
+  height: 33vh; /* 占屏幕高度的三分之一 */
+  min-height: 200px; /* 最小高度，避免过小屏幕下显示不全 */
+  overflow: hidden;
+}
+
+/* 标题容器（用于居左和添加半透明遮罩） */
+.header-content {
+  position: absolute;
+  left: 5%; /* 左侧距离 */
+  top: 50%; /* 垂直居中 */
+  transform: translateY(-50%); /* 精确垂直居中 */
+  padding: 1.5rem 2rem;
+  /* 半透明背景增强文字可读性 */
+  
+  border-radius: 6px;
+}
+
+/* 标题样式 */
+.header-content h1 {
+  color: white;
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* 文字阴影增强立体感 */
+}
+
+/* 原有实验室介绍样式（保持之前的调整） */
+.lab-intro {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.intro-text {
+  flex: 7;
+}
+
+.intro-image {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-image img {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  /* 小屏幕标题调整 */
+  .header-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  /* 原有响应式样式保持 */
+  .lab-intro {
+    flex-direction: column;
+  }
+  .intro-text, .intro-image {
+    flex: none;
+    width: 100%;
+  }
+  .intro-image img {
+    max-height: 350px;
+  }
+}
+</style>
+</head>
+<body>
+  <!-- 顶部导航栏 -->
+ <header class="top-header" style="background: #333; color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;">
+    <!-- 左侧标题 -->
+    <div class="logo" style="font-size: 1.5rem; font-weight: bold; color: #ffd700;">
+        VisSpectral
+    </div>
+    
+    <!-- 右侧导航 -->
+    <nav class="main-nav">
+      <ul style="display: flex; list-style: none; gap: 2rem;">
+        <li><a href="/" style="color: #ffd700; text-decoration: none;">首页</a></li>
+        <li><a href="../news.html/" style="color: white; text-decoration: none;">新闻动态</a></li>
+        <li><a href="../team.html/" style="color: white; text-decoration: none;">研究团队</a></li>
+        <li><a href="../result.html/" style="color: white; text-decoration: none;">科研成果</a></li>
+        <li><a href="../search.html" style="color: white; text-decoration: none;">搜索</a></li>
+        <li><a href="../about.html/" style="color: white; text-decoration: none;">关于我们</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <header class="team-header-banner">
+    <div class="header-content">
+    <h1>研究团队</h1>
+    </div>
+    </header>
+
+
+<!-- 团队成员标题 -->
+<div class="team-header">
+  <h1>实验室领导</h1>
+</div>
+
+<main>
+    
+    <!-- 实验室介绍部分（左侧文字+右侧图片） -->
+    <section class="lab-intro">
+      <div class="intro-text">
+        <h2 style="margin-bottom: 1.5rem; color: #2c3e50; font-size: 2rem;">李佳男</h2>
+        <p style="margin-bottom: 1rem; line-height: 1.8; font-size: 1.1rem;">李佳男，博士，北京理工大学光电学院长聘副教授（特别研究员）。长期从事光电成像目标探测与识别、光计算与智能感知、计算机视觉等方向研究。以第一作者发表论文16篇，平均影响因子13.4，包括IEEE TPAMI 4篇、ESI高被引1篇，单篇被引超850次2篇；以通讯作者发表论文50余篇，包括IEEE TMI、TNNLS、NeurIPS 、CVPR、ECCV (Oral) 等。论文单篇最高被引900余次，谷歌学术总引4400余次。相关研究成果在“中国天眼”等国家重大科技基础设施中得到重要应用。</p>
+        <p style="margin-bottom: 1rem; line-height: 1.8; font-size: 1.1rem;">主持国家自然科学基金青年基金等项目7项；入选中国科协、北京市科协“青年人才托举工程”，获得中国图象图形学学会优秀博士学位论文、王大珩高校学生光学奖、北京市三好学生、ImageNet国际大规模视觉识别挑战赛团队冠军等荣誉。</p>
+        <p style="line-height: 1.8; font-size: 1.1rem;">指导研究生获得ICCV 2021“反无人机跟踪”挑战赛国际冠军及最佳论文奖、ECCV 2022“点云目标鲁棒识别”挑战赛国际季军、第四届“空天杯”创新创意大赛全国二等奖、中国高等教育博览会“校企合作 双百计划”典型案例、第九届高效科技创新成果展示推介会“一等奖”等。</p>
+      </div>
+      <div class="intro-image">
+        <img src="/assets/images/ljn.png" alt="李佳男" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      </div>
+    </section>
+  </main>
+
+<!-- 团队成员标题 -->
+<div class="team-header">
+  <h1>研究人员</h1>
+</div>
+
+<!-- 新的人员展示容器 -->
+<div class="team-grid">
+  <!-- 成员1 -->
+  <div class="team-card">
+    <div class="member-photo">
+      <img src="/assets/images/ljn.png" alt="李佳男" class="photo-img">
+    </div>
+    <div class="member-info">
+      <h3 class="member-name">李佳男</h3>
+      <p class="member-research">研究方向：光电成像目标探测与识别、光计算与智能感知、计算机视觉</p>
+      
+      <!-- 简历交互区域 -->
+      <div class="member-resume">
+        <button class="resume-toggle">查看简历</button>
+        <div class="resume-detail">
+          <p>博士，北京理工大学光电学院预聘助理教授（特别副研究员）。长期从事光电成像目标探测与识别、光计算与智能感知、计算机视觉等方向研究。以第一作者发表论文16篇，平均影响因子13.4，包括IEEE TPAMI 4篇、ESI高被引1篇，单篇被引超850次2篇；以通讯作者发表论文50余篇，包括IEEE TMI、TNNLS、NeurIPS 、CVPR、ECCV (Oral) 等。论文单篇最高被引900余次，谷歌学术总引4400余次。相关研究成果在“中国天眼”等国家重大科技基础设施中得到重要应用。
+
+        主持国家自然科学基金青年基金等项目7项；入选中国科协、北京市科协“青年人才托举工程”，获得中国图象图形学学会优秀博士学位论文、王大珩高校学生光学奖、北京市三好学生、ImageNet国际大规模视觉识别挑战赛团队冠军等荣誉。
+        
+        指导研究生获得ICCV 2021“反无人机跟踪”挑战赛国际冠军及最佳论文奖、ECCV 2022“点云目标鲁棒识别”挑战赛国际季军、第四届“空天杯”创新创意大赛全国二等奖、中国高等教育博览会“校企合作 双百计划”典型案例、第九届高效科技创新成果展示推介会“一等奖”等。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 成员2 -->
+  <div class="team-card">
+    <div class="member-photo">
+      <img src="/assets/images/ljn.png" alt="李四" class="photo-img">
+    </div>
+    <div class="member-info">
+      <h3 class="member-name">李四</h3>
+      <p class="member-research">研究方向：目标检测</p>
+      
+      <div class="member-resume">
+        <button class="resume-toggle">查看简历</button>
+        <div class="resume-detail">
+          <p>李四，博士，副教授。2010年毕业于XX研究所，曾在国外知名大学做博士后研究。研究方向为多光谱目标检测与跟踪，发表论文30余篇，主持省部级项目5项。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 新增成员示例 -->
+  <div class="team-card">
+    <div class="member-photo">
+      <img src="/assets/images/ljn.png" alt="王五" class="photo-img">
+    </div>
+    <div class="member-info">
+      <h3 class="member-name">王五</h3>
+      <p class="member-research">研究方向：机器学习</p>
+      
+      <div class="member-resume">
+        <button class="resume-toggle">查看简历</button>
+        <div class="resume-detail">
+          <p>王五，博士，讲师。2018年毕业于XX理工大学，研究方向为机器学习在图像处理中的应用，参与国家级项目2项，发表EI论文15篇。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+// 简历展开/折叠功能
+document.querySelectorAll('.resume-toggle').forEach(button => {
+  button.addEventListener('click', function() {
+    const resumeDetail = this.nextElementSibling;
+    resumeDetail.classList.toggle('active');
+    
+    // 切换按钮文字
+    this.textContent = resumeDetail.classList.contains('active') 
+      ? '收起简历' 
+      : '查看简历';
+  });
+});
+</script>
+
+  <!-- 网站尾部（铺满页面） -->
+  <footer style="background: #f5f5f5; padding: 2rem; text-align: center; width: 100%; margin-top: 3rem;">
+    <p style="font-size: 1rem; color: #333;">© {{ site.time | date: "%Y" }} {{ site.title }} - 用 Jekyll 搭建</p>
+  </footer>
+
+
+
+  
+</body>
+</html>

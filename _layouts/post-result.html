@@ -1,0 +1,33 @@
+---
+layout: page  # 继承基础模板（可选，用于复用导航栏、底部等）
+---
+
+<!-- 文章详情页容器 -->
+<div class="post-detail" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
+  <!-- 文章标题 -->
+  <h1 style="color: #2c3e50; margin-bottom: 0.5rem;">{{ page.title }}</h1>
+
+  <!-- 发布时间 -->
+  <time style="color: #666; font-size: 0.9rem; display: block; margin-bottom: 2rem;">
+    发布于：{{ page.date | date: "%Y年%m月%d日" }}
+  </time>
+
+  <!-- 文章封面图（可选） -->
+  {% if page.image %}
+  <div class="post-image" style="margin-bottom: 2rem;">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" style="width: 100%; border-radius: 8px;">
+  </div>
+  {% endif %}
+
+  <!-- 文章正文（Markdown 内容会被渲染成 HTML 在这里显示） -->
+  <div class="post-content" style="line-height: 1.8; color: #333;">
+    {{ content }}  <!-- 这是核心，会自动插入 Markdown 解析后的内容 -->
+  </div>
+
+  <!-- 返回新闻列表链接 -->
+  <div style="margin-top: 3rem;">
+    <a href="/result.html" style="color: #3498db; text-decoration: none;">
+      ← 返回成果列表
+    </a>
+  </div>
+</div>
