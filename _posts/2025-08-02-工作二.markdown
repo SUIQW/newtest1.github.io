@@ -2,7 +2,7 @@
 title: "工作2"
 layout: post
 date: 2025-08-02 10:00:00
-image: assets/images/lab-photo.jpg  # 图片路径
+image: /assets/images/lab-photo.jpg  # 图片路径
 excerpt: "这里是新闻简介内容..."  # 可选，不填则默认取文章第一段
 categories: news  # 分类标签
 ---
