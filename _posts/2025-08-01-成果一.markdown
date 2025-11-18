@@ -4,7 +4,7 @@ layout: post-result
 date: 2025-08-01 10:00:00
 image: assets/images/lab-photo.jpg  # 新闻列表页显示的封面图
 excerpt: "本文详细介绍了近期完成的核心工作内容，包括技术突破、项目成果及未来规划，附多张现场实拍图和相关资料链接。"  # 列表页显示的简介
-categories: result  # 分类标签
+categories:   # 分类标签
 ---
 
 # 成果一：智能实验室系统升级完成
