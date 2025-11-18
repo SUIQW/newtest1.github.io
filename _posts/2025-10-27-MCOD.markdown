@@ -19,12 +19,12 @@ categories: [result, CV, benchmark, 多光谱, 伪装目标检测]  # 分类标�
 </center>
 &emsp;&emsp;通过引入多光谱模态，模型能够充分利用多光谱图像中丰富的空间-光谱信息，显著减少了模型错检、漏检的情况，并且改善了模型对于复杂边界轮廓的预测能力，从而提高预测精度，如图2、图3 所示。<br>
 <center>
-  <img src="/assets/images/MCOD3.png" alt="多光谱模态对错检漏检的改善" style="max-width: 80%;">
+  <img src="{{ '/assets/images/MCOD3.png' | relative_url }}" alt="多光谱模态对错检漏检的改善" style="max-width: 80%;">
   <br> 
   <em>图2. 多光谱模态对于错检、漏检情况的改善</em>
 </center>
 <center>
-  <img src="/assets/images/MCOD4.png" alt="多光谱模态对复杂边界轮廓预测的提升" style="max-width: 80%;">
+  <img src="{{ '/assets/images/MCOD4.png' | relative_url }}" alt="多光谱模态对复杂边界轮廓预测的提升" style="max-width: 80%;">
   <br>
   <em>图3. 多光谱模态对于复杂边界轮廓预测的提升</em>
 </center>
