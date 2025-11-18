@@ -1,0 +1,34 @@
+---
+title: "科研成果"
+subtitle: "Hyperspectral Remote Sensing Images Salient Object Detection: The First Benchmark Dataset and Baseline"
+layout: post-result
+date: 2025-04-07 10:00:01
+image: /assets/images/HRSSD_main.png  # 新闻列表页显示的封面图
+excerpt: "针对遥感场景下高光谱显著性目标数据集与基准方法缺失的问题，北京理工大学光电学院许廷发教授科研团队开展了遥感场景下高光谱显著性目标检测技术研究，取得了突破性进展。"  # 列表页显示的简介
+categories: [result, 高光谱, 显著性目标检测, 遥感场景]  # 分类标签
+---
+
+# 许廷发教授科研团队在遥感场景下的高光谱显著性目标检测技术研究方面取得了突破性进展
+
+&emsp;&emsp;针对遥感场景下高光谱显著性目标数据集与基准方法缺失的问题，团队在中科院一区TOP期刊 IEEE Transactions on Geoscience and Remote Sensing 上发表了“Hyperspectral Remote Sensing Images Salient Object Detection: The First Benchmark Dataset and Baseline”论文。<br>
+&emsp;&emsp;高光谱遥感显著性检测在国防监测、环境评估和资源勘查中具有重要应用，但长期以来发展缓慢，核心原因在于研究几乎全部集中在自然场景，缺乏针对遥感场景的专门数据集和方法。此外，传统基于“中心–周围光谱差异”构建的算法在面对大尺度变化、复杂地物关系和多目标场景时易出现小目标丢失、前景–背景混淆和多物体粘连等问题。为推动该领域实质性进展，团队构建了首个高光谱遥感显著性检测数据集 HRSSD，包含 704 幅图像与 5327 个像素级显著目标，系统呈现大尺度差异、复杂前景–背景关系和多显著目标三重挑战。<br>
+<center>
+  <img src="{{ '/assets/images/HRSSD1.png' | relative_url }}" alt=" HRSSD数据集示例" style="max-width: 80%;">
+  <br> 
+  <em>图1  HRSSD数据集示例</em>
+</center>
+&emsp;&emsp;在此基础上，团队提出深度光谱显著网络 DSSN，以“中心–周围光谱差异评估”为核心思想，通过空间–光谱联合特征提取、跨层显著性评估以及高分辨率融合模块实现多尺度光谱信息的精准建模。该网络能同时增强前景–背景可分性、抑制复杂背景中的错误响应，并保持对小目标和细节的高分辨率感知，为高光谱遥感显著性检测提供了首个专门的深度学习基线。<br>
+<center>
+  <img src="{{ '/assets/images/HRSSD2.png' | relative_url }}" alt="DSSN模型架构图" style="max-width: 80%;">
+  <br> 
+  <em>图2 DSSN模型架构图</em>
+</center>
+&emsp;&emsp;可视化实验结果表明，现有的方法在HRSSD数据集上表现欠佳，展示了真对遥感场景构建数据集并建立基准模型的必要性。<br>
+<center>
+  <img src="{{ '/assets/images/HRSSD3.png' | relative_url }}" alt="可视化实验结果" style="max-width: 80%;">
+  <br> 
+  <em>图3 可视化实验结果</em>
+</center>
+## 论文链接
+https://ieeexplore.ieee.org/document/10950441
+
