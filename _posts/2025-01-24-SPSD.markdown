@@ -1,0 +1,30 @@
+---
+title: "科研成果"
+subtitle: "Spectrum-Oriented Point-Supervised Saliency Detector for Hyperspectral Images"
+layout: post-result
+date: 2025-01-24 10:00:00
+image: /assets/images/SPSD_main.png  # 新闻列表页显示的封面图
+excerpt: "针对高光谱显著性目标检测严重依赖像素级标注的问题，北京理工大学光电学院许廷发教授科研团队开展了自然场景下的高光谱显著性目标检测技术研究，取得了突破性进展。"  # 列表页显示的简介
+categories: [result, 高光谱, 显著性目标检测, 自然场景]  # 分类标签
+---
+
+# 许廷发教授科研团队在自然场景下的高光谱显著性目标检测技术研究方面取得了突破性进展
+
+&emsp;&emsp;针对高光谱显著性目标检测严重依赖像素级标注的问题，团队在中科院二区期刊IEEE Transactions on Instrumentation and Measurement上发表了以题为“Spectrum-Oriented Point-Supervised Saliency Detector for Hyperspectral Images”的论文。<br>
+&emsp;&emsp;像素级标注在高光谱图像中成本极高，而现有的点监督框架在高光谱场景中难以发挥作用。因此，团队提出首个面向高光谱图像的点监督显著性检测框架 SPSD。方法首先构建光谱显著图并用于对伪彩色边缘进行补全，从而生成覆盖更完整、边界更准确的伪标签；随后通过双分支编码器和光谱变换空间门（SSG）引导网络重点关注真正的显著区域，减少冗余特征；最终结合混合 CRF 精修，使预测结果在不依赖像素级标注的情况下仍能保持优良的边缘与结构一致性。<br>
+<center>
+  <img src="{{ '/assets/images/SPSD1.png' | relative_url }}" alt="提出的SPSD模型" style="max-width: 80%;">
+  <br> 
+  <em>图1 提出的SPSD模型</em>
+</center>
+&emsp;&emsp;整体流程实现了充分挖掘光谱信息、降低伪标签噪声、强化目标区域表达的效果。图2为SPSD与对比方法再HSOD-BIT数据集上的可视化结果。<br>
+<center>
+  <img src="{{ '/assets/images/SPSD2.png' | relative_url }}" alt="不同挑战场景下的检测结果可视化对比" style="max-width: 80%;">
+  <br> 
+  <em>图2 不同挑战场景下的检测结果可视化对比</em>
+</center>
+&emsp;&emsp;实验结果显示，SPSD 在过曝、光照不均和前景背景颜色接近等极端条件下仍能保持完整轮廓和清晰边界。<br>
+
+## 论文链接
+https://ieeexplore.ieee.org/abstract/document/10852603
+
