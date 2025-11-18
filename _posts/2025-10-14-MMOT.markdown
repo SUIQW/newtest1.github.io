@@ -1,0 +1,38 @@
+---
+title: "科研成果"
+subtitle: "MMOT: The First Challenging Benchmark for Drone-based Multispectral Multi-Object Tracking"
+layout: post-result
+date: 2025-10-14 10:00:00
+image: /assets/images/MMOT_main.png  # 新闻列表页显示的封面图
+excerpt: "针对传统RGB视觉在复杂航拍场景下存在的小目标难检测、密集遮挡严重和纹理特征退化等瓶颈问题，北京理工大学光电学院许廷发教授科研团队在多光谱目标跟踪领域取得新突破。"  # 列表页显示的简介
+categories: [result, 多光谱, 目标跟踪, 无人机视角]  # 分类标签
+---
+
+# 北理工光电学院许廷发教授团队在多光谱目标跟踪领域取得新突破
+
+&emsp;&emsp;近日，北京理工大学光电学院许廷发教授科研团队在多光谱目标跟踪领域取得新突破。针对传统RGB视觉在复杂航拍场景下存在的小目标难检测、密集遮挡严重和纹理特征退化等瓶颈问题，科研团队构建了全球首个无人机视角下的多光谱目标跟踪数据集（Multispectral Multi-Object Tracking，MMOT），提出了一种多光谱目标感知一体化目标跟踪方法，相关成果以《MMOT: The First Challenging Benchmark for Drone-based Multispectral Multi-Object Tracking》为题，发表于NeurIPS 2025（Conference on Neural Information Processing Systems），该会议为人工智能与机器学习领域的顶级国际学术会议（CCF-A类）。论文第一作者为北京理工大学李天昊博士研究生，通讯作者为许廷发教授和李佳男长聘副教授。<br>
+&emsp;&emsp;多光谱目标跟踪框架主要包括Spectral 3D-Stem模块、旋转感知卡尔曼滤波器和端到端旋转自适应Transformer架构，具体如图1所示。<br>
+<center>
+  <img src="{{ '/assets/images/MMOT1.png' | relative_url }}" alt="多光谱目标跟踪框架图" style="max-width: 80%;">
+  <br> 
+  <em>图1 多光谱目标跟踪框架图</em>
+</center>
+&emsp;&emsp;该方法通过光谱空间联合建模和引入目标旋转角度状态参数，显著提升光谱信息表达能力，实现了精准的多光谱小目标检测和目标间关联，降低了误检、漏检及ID转换次数，如图2所示。<br>
+<center>
+  <img src="{{ '/assets/images/MMOT2.png' | relative_url }}" alt="多光谱输入和RGB输入的ID转换和漏检对比" style="max-width: 80%;">
+  <br> 
+  <em>图2 多光谱输入和RGB输入的ID转换和漏检对比</em>
+</center>
+&emsp;&emsp;团队构建了首个国内外无人机航拍多光谱目标数据集。其覆盖城市街区、交通枢纽、运动场地等多种真实场景的航拍视频，包含125段视频序列、48万余个高精度标注目标框，涵盖8个典型类别（行人、汽车、自行车等）。多光谱成像跨越可见光至近红外范围，涵盖多种挑战场景如极小目标、密集目标、图像模糊、严重遮挡、快速运动和平面内旋转等，如图3所示。<br>
+<center>
+  <img src="{{ '/assets/images/MMOT3.png' | relative_url }}" alt="数据集多种挑战场景" style="max-width: 80%;">
+  <br> 
+  <em>图3 数据集多种挑战场景</em>
+</center>
+&emsp;&emsp;MMOT发布填补了国内外无人机多光谱目标跟踪领域空白，为研究人员提供了首个统一基准与开源框架。该工作突破了传统视觉感知对空间特征的依赖，充分利用光谱维度的差异性，为未来跨模态融合感知、复杂环境下的智能无人系统识别与跟踪奠定了重要基础。<br>
+
+## 论文详情
+Tianhao Li, Tingfa Xu, Ying Wang, Haolin Qin, Xu Lin and Jianan Li. MMOT: The First Challenging Benchmark for Drone-based Multispectral Multi-Object Tracking[J]. Advances in Neural Information Processing Systems, 2025
+## 论文链接
+https://neurips.cc/virtual/2025/poster/121413
+
