@@ -1,5 +1,6 @@
 ---
 title: "科研成果"
+subtitle: "MCOD:The First Challenging Benchmark for Multispectral Camouflaged Object Detection"
 layout: post-result
 date: 2025-10-27 10:00:00
 image: /assets/images/MCOD1.png  # 新闻列表页显示的封面图
@@ -9,7 +10,6 @@ categories: [result, CV, benchmark, 多光谱, 伪装目标检测]  # 分类标�
 
 # 许廷发教授科研团队在基于多光谱图像的伪装目标检测技术研究方面取得了突破性进展
 
-## 成果介绍
 &emsp;&emsp;针对传统光学检测方法在复杂环境中对伪装目标识别效果不佳的难题，北京理工大学光电学院许廷发教授科研团队开展了基于多光谱图像的伪装目标检测技术研究，取得了突破性进展。相关成果以《MCOD:The First Challenging Benchmark for Multispectral Camouflaged Object Detection》为题，发表在国际计算机视觉顶级学术会议《Association for Computing Machinery Multimedia（ACM MM）》（CCF-A）。ACM MM由国际计算机协会（ACM）发起，是多媒体处理、分析与计算领域最具影响力的国际顶级会议。论文的第一作者为北京理工大学李洋硕士研究生，通讯作者为许廷发教授和李佳男长聘副教授。<br>
 &emsp;&emsp;团队构建了首个多光谱伪装目标检测数据集MCOD。MCOD数据集包含1527张经过像素级图像标注的多光谱图像，涵盖了从可见光到近红外范围的光谱波段，并且具有1140×860的空间分辨率大小。MCOD包含落叶、草丛、花园等多种广泛的真实世界场景，涵盖了杂乱背景、目标遮挡、极端光照条件等多种挑战属性，如图1所示。<br>
 <center>
