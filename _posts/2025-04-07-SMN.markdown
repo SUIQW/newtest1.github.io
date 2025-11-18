@@ -1,0 +1,31 @@
+---
+title: "科研成果"
+subtitle: "Spectrum-Driven Mixed-Frequency Network for Hyperspectral Salient Object Detection"
+layout: post-result
+date: 2025-04-07 10:00:00
+image: /assets/images/SMN_main.png  # 新闻列表页显示的封面图
+excerpt: "针对高光谱显著性目标检测中光谱信息利用率低的问题，团队在中科院一区TOP期刊IEEE Transactions on Multimedia上发表了以题为“Spectrum-Driven Mixed-Frequency Network for Hyperspectral Salient Object Detection”的论文。"  # 列表页显示的简介
+categories: [result, 高光谱, 高光谱目标检测, 自然场景]  # 分类标签
+---
+
+# 许廷发教授科研团队在自然场景下的高光谱显著性目标检测技术研究方面取得了突破性进展
+
+&emsp;&emsp;针对高光谱显著性目标检测中光谱信息利用率低的问题，团队在中科院一区TOP期刊IEEE Transactions on Multimedia上发表了以题为“Spectrum-Driven Mixed-Frequency Network for Hyperspectral Salient Object Detection”的论文。<br>
+&emsp;&emsp;高光谱显著性目标检测方法通常将高维光谱数据粗糙压缩为伪彩色图像，这导致光谱信息被严重浪费，边缘模糊、定位不准的问题在高亮、遮挡或前景背景颜色相似的场景中尤为突出。基于此，团队提出了全新的 SMN模型，首次将光谱低频“显著性”与高频“边缘”成分解耦提取并融合进同一端到端网络。SMN通过两个无需训练的算子生成光谱显著性图与光谱边缘图，再通过混合频率注意力模块实现互补信息的智能耦合，最终由解码器输出结构清晰、边缘完整的显著性图。<br>
+<center>
+  <img src="{{ '/assets/images/SMN1.png' | relative_url }}" alt="提出的SMN模型" style="max-width: 80%;">
+  <br> 
+  <em>图1 提出的SMN模型</em>
+</center>
+&emsp;&emsp;得益于这一设计，SMN在面对过曝、伪彩色难分辨或纹理不明显的场景时，仍能稳定识别前景目标，显著提升检测的准确性与细节保真度。图2为不同挑战场景下的检测结果可视化结果。<br>
+<center>
+  <img src="{{ '/assets/images/SMN2.png' | relative_url }}" alt="不同挑战场景下的检测结果可视化对比" style="max-width: 80%;">
+  <br> 
+  <em>图2 不同挑战场景下的检测结果可视化对比</em>
+</center>
+&emsp;&emsp;实验结果表明，SMN 在颜色相近、光照复杂的场景中展现出明显优势，能够输出完整、边缘锐利的显著性结果。<br>
+
+
+## 论文链接
+https://ieeexplore.ieee.org/document/10313066
+
