@@ -1,0 +1,54 @@
+---
+title: "科研成果"
+subtitle: "DMSSN: Distilled Mixed Spectral–Spatial Network for Hyperspectral Salient Object Detection"
+layout: post-result
+date: 2025-03-19 10:00:00
+image: /assets/images/DMSSN_main.png  # 新闻列表页显示的封面图
+excerpt: "为满足深度学习模型训练对大规模高光谱显著性目标检测数据的需求，北京理工大学许廷发、李佳男团队最近提出了首个大规模、具有挑战性的高光谱显著性目标检测数据集HSOD-BIT。"  # 列表页显示的简介
+categories: [result, 高光谱, 显著性目标检测, 数据集]  # 分类标签
+---
+
+# 大规模高光谱显著性目标检测数据集HSOD-BIT
+&emsp;&emsp;高光谱显著性目标检测技术将高光谱成像与目标检测相结合，在精细化目标识别、环境监测等领域具有广泛的应用前景。为满足深度学习模型训练对大规模高光谱显著性目标检测数据的需求，北京理工大学许廷发、李佳男团队最近提出了首个大规模、具有挑战性的高光谱显著性目标检测数据集HSOD-BIT。该数据集包含319幅高光谱图像，图像空间分辨率为1680×1240，光谱分辨率为3nm，波段数200，涵盖了从可见光至近红外波段的光谱信息。相关论文已被IEEE Transactions on Geoscience and Remote Sensing期刊收录。<br>
+
+## 数据集简介
+
+&emsp;&emsp;HSOD-BIT数据集包含319幅高光谱图像及对应的伪彩色图像和像素级标注（如图1所示）。这些图像涵盖了北京理工大学及其周边地区在多种天气条件下的校园环境、城市街道、自然风景等多种场景。在数据集的构建过程中，充分考虑了前背景相似、复杂光照条件等挑战，以增强数据集对显著性目标检测算法的全面评估能力。<br>
+<center>
+  <img src="{{ '/assets/images/DMSSN1.png' | relative_url }}" alt="HSOD-BIT数据集的部分伪彩色图像及真值标签样例" style="max-width: 80%;">
+  <br> 
+  <em>图1 HSOD-BIT数据集的部分伪彩色图像及真值标签样例</em>
+</center>
+
+## 数据集特点
+
+1）数据体量大：数据集包含的图像数量是之前数据集的5至10倍，为深度学习模型提供了充足的训练样本，有助于增强模型的泛化能力并降低过拟合风险。<br>
+2）高空—谱分辨率：数据集中的图像包含了从可见光到近红外的200个光谱波段，具有高光谱分辨率和高空间分辨率，提供了多维度丰富的场景信息。<br>
+3）场景复杂多样：数据集包括了校园环境、城市街道、自然风景等多种实际场景，并考虑了前背景相似、复杂光照等挑战，为算法的实际应用提供了良好的测试环境。<br>
+
+## 性能评估
+
+&emsp;&emsp;基于HSOD-BIT数据集对多个传统及基于深度学习的显著性目标检测算法进行了全面的性能评估。表1和图2分别展示了量化和可视化的评测结果。<br>
+<center>
+  <img src="{{ '/assets/images/DMSSN2.png' | relative_url }}" alt="不同算法在HSOD-BIT数据集上的量化评测结果比较" style="max-width: 80%;">
+  <br> 
+  <em>表1 不同算法在HSOD-BIT数据集上的量化评测结果比较</em>
+</center>
+<center>
+  <img src="{{ '/assets/images/DMSSN3.png' | relative_url }}" alt="不同算法在HSOD-BIT数据集上的可视化结果比较" style="max-width: 80%;">
+  <br> 
+  <em>图2 不同算法在HSOD-BIT数据集上的可视化结果比较</em>
+</center>
+
+## 应用与展望
+&emsp;&emsp;HSOD-BIT数据集的建立为高光谱显著性目标检测技术的研究和发展提供了重要的数据支持。随着高光谱成像技术的不断进步，高光谱显著性目标检测有望在更广泛的领域发挥关键作用。<br>
+
+## 论文详情
+H. Qin, T. Xu, P. Liu, J. Xu and J. Li, "DMSSN: Distilled Mixed Spectral–Spatial Network for Hyperspectral Salient Object Detection," in IEEE Transactions on Geoscience and Remote Sensing, vol. 62, pp. 1-18, 2024, doi: 10.1109/TGRS.2024.3379380.
+
+## 论文链接
+https://ieeexplore.ieee.org/abstract/document/10852603
+
+## 数据集和代码链接
+https://github.com/q2479‍0‍36243/DMSSN
+
